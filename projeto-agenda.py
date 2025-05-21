@@ -30,6 +30,12 @@ def favoritar_contato(contatos, indice_contato):
     print(f"Contato {indice_contato} marcado como favorito")
     return
 
+def ver_contatos_favoritos(contatos):
+    print(f"\n Lista de contatos favoritos: {contatos}")
+    # newlist = [x for x in contatos if "favorito" in x]
+    # print(newlist)
+    return
+
 contatos = []
 while True:
     print("\n Menu do gerenciador de lista de tarefas")
@@ -62,6 +68,9 @@ while True:
         ver_contatos(contatos)
         indice_contato = input("Digite o número do contato que deseja favoritar: ")
         favoritar_contato(contatos, indice_contato)
+
+    elif escolha == "5":
+        ver_contatos_favoritos(contatos)
 
     elif escolha == "7":
         break

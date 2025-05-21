@@ -23,6 +23,13 @@ def editar_contato(contatos, indice_contato, novo_nome_contato):
         print("Indice do contato inválido")
     return
 
+def favoritar_contato(contatos, indice_contato):
+    indice_contato_ajustado = int(indice_contato) - 1
+    contato = contatos[indice_contato_ajustado]
+    contato["favorito"] = not contato.get("favorito", False)
+    print(f"Contato {indice_contato} marcado como favorito")
+    return
+
 contatos = []
 while True:
     print("\n Menu do gerenciador de lista de tarefas")
@@ -50,6 +57,11 @@ while True:
         indice_contato = input("Digite o número o numero do contato que deseja atualizar: ")
         novo_nome = input("Digite o novo nome do contato: ")
         editar_contato(contatos, indice_contato, novo_nome)
+
+    elif escolha == "4":
+        ver_contatos(contatos)
+        indice_contato = input("Digite o número do contato que deseja favoritar: ")
+        favoritar_contato(contatos, indice_contato)
 
     elif escolha == "7":
         break

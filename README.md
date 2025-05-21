@@ -1,7 +1,7 @@
-# Desafio 01: https://efficient-sloth-d85.notion.site/Desafio-01-622bb29769034c9ba659f2dc33019055#2645f5a88094427a9ac83542701dd5da
+# Desafio 01: 
 
 Desafio referente ao módulo: Introdução ao Python
-
+https://efficient-sloth-d85.notion.site/Desafio-01-622bb29769034c9ba659f2dc33019055#2645f5a88094427a9ac83542701dd5da
 ## Introdução
 
 Faaala Dev,

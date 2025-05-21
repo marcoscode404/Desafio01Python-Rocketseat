@@ -14,6 +14,15 @@ def ver_contatos(contatos):
         print(f"{indice}, [{status}] {nome_contato}, {numero_contato}, {email}")
     return
 
+def editar_contato(contatos, indice_contato, novo_nome_contato):
+    indice_contato_ajustado = int(indice_contato) - 1
+    if indice_contato_ajustado >= 0 and indice_contato_ajustado < len(contatos):
+        contatos[indice_contato_ajustado]["nome"] = novo_nome_contato
+        print(f"Contato {indice_contato} atualizado para {novo_nome_contato}")
+    else:
+        print("Indice do contato inválido")
+    return
+
 contatos = []
 while True:
     print("\n Menu do gerenciador de lista de tarefas")
@@ -35,6 +44,12 @@ while True:
 
     elif escolha == "2":
         ver_contatos(contatos)
+
+    elif escolha == "3":
+        ver_contatos(contatos)
+        indice_contato = input("Digite o número o numero do contato que deseja atualizar: ")
+        novo_nome = input("Digite o novo nome do contato: ")
+        editar_contato(contatos, indice_contato, novo_nome)
 
     elif escolha == "7":
         break

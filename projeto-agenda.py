@@ -31,9 +31,19 @@ def favoritar_contato(contatos, indice_contato):
     return
 
 def ver_contatos_favoritos(contatos):
-    print(f"\n Lista de contatos favoritos: {contatos}")
-    # newlist = [x for x in contatos if "favorito" in x]
-    # print(newlist)
+    favoritos = [contato for contato in contatos if contato.get("favorito")]
+    print("\nLista de contatos favoritos:")
+    for contato in favoritos:
+        print(f"- {contato['nome']} ({contato['telefone']}) ({contato['email']}) ({contato['favorito']})")
+    return favoritos
+
+def deletar_contato(contatos, indice_contato):
+    indice_contato_ajustado = int(indice_contato) - 1
+    if 0 <= indice_contato_ajustado < len(contatos):
+        contato_removido = contatos.pop(indice_contato_ajustado)
+        print(f"Contato '{contato_removido['nome']}' deletado.")
+    else:
+        print("Índice inválido.")
     return
 
 contatos = []
@@ -47,7 +57,6 @@ while True:
     print("6. Apagar contato")
 
     escolha = input("Digite a sua escolha: ")
-
 
     if escolha == "1":
         nome_contato = input("Digite o nome do contato que deseja adicionar: ")
@@ -71,6 +80,12 @@ while True:
 
     elif escolha == "5":
         ver_contatos_favoritos(contatos)
+
+    elif escolha == "6":
+        ver_contatos(contatos)
+        indice_contato = input("Digite o número do contato que deseja deletar: ")
+        deletar_contato(contatos, indice_contato)
+        ver_contatos(contatos)
 
     elif escolha == "7":
         break
